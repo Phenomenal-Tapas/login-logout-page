@@ -3,7 +3,7 @@ import { ADMIN, LOGOUT_TEXT, USERS } from "../constants/constants";
 import UserContext from "../context/UserContext";
 import classes from "../styles/Navigation.module.css";
 
-const Navigation = (props) => {
+const Navigation = () => {
   const user = useContext(UserContext);
   return (
     <nav className={classes.nav}>
@@ -20,7 +20,7 @@ const Navigation = (props) => {
         )}
         {user.isLoggedIn && (
           <li>
-            <button onClick={props.onLogout}>{LOGOUT_TEXT}</button>
+            <button onClick={user.onLogout}>{LOGOUT_TEXT}</button>
           </li>
         )}
       </ul>
